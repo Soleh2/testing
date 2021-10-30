@@ -1,7 +1,7 @@
 {
-  "name": "stikerinbot",
-  "version": "1.1.2",
-  "description": "WhatsApp Bot Ringan",
+  "name": "Moon",
+  "version": "",
+  "description": "",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -9,7 +9,7 @@
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node index.js --self",
+    "start": "node index.js --public",
     "test": "node test.js"
   },
   "repository": {
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/ariffb25/stikerinbot/issues"
   },
-  "homepage": "https://github.com/ariffb25/stikerinbot",
+  "homepage": "https://github.com/Nando35",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
     "awesome-phonenumber": "^2.54.0",
