@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let er = `
-┌〔 Pilihan 〕
+┌「 *Pilihan* 」
 ├ latinkejawa
 ├ latinkesunda
 ├ jawakelatin
