@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *${usedPrefix}${command} <nama hewan>*
 contoh:
 *${usedPrefix}${command} <dog>*\n
-┌〔 Opsi 〕
+┌「 *Opsi* 」
 ├ dog
 ├ cat
 ├ panda
