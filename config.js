@@ -1,5 +1,5 @@
 let fs = require('fs')
-global.owner = ['6281252848955', '6281252848955'] // Letakan nomor kamu disini
+global.owner = ['6281252848955', '18554394933'] // Letakan nomor kamu disini
 global.mods = [] // Moderator?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 global.APIs = { // API Prefix
@@ -9,7 +9,7 @@ global.APIs = { // API Prefix
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto-chan.herokuapp.com',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
-  neoxr: 'https://neoxr-api.herokuapp.com',
+  neoxr: 'https://api.neoxr.eu.org',
   nrtm: 'https://nurutomo.herokuapp.com',
   pencarikode: 'https://pencarikode.xyz',
   xteam: 'https://api.xteam.xyz',
@@ -31,10 +31,10 @@ global.APIKeys = { // APIKey nya disini
 
 // Sticker WM
 global.packname = 'Made With'
-global.author = '@naaaanndo'
+global.author = 'Moon'
 
-global.wait = '*Tunggu perintah Anda sedang di proses*'
-global.eror = '*Maaf, server sedang error*'
+global.wait = '_*Tunggu sedang di proses...*_'
+global.eror = '_*Server Error*_'
 global.fla = 'https://i.postimg.cc/2jBCvPg6/7a802449a030480ea82dd53705e71882.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
