@@ -134,7 +134,7 @@
       "pasangan": ""
     },
     "6281252848955@s.whatsapp.net": {
-      "exp": 24126,
+      "exp": 24158,
       "limit": 10,
       "lastclaim": 1635939452635,
       "registered": true,
@@ -148,7 +148,7 @@
       "call": 0,
       "role": "Warrior III",
       "autolevelup": true,
-      "pc": 1635908918093,
+      "pc": 1635996345009,
       "warning": 0,
       "pasangan": ""
     },
@@ -6309,7 +6309,7 @@
       "pasangan": ""
     },
     "6288238615283@s.whatsapp.net": {
-      "exp": 71,
+      "exp": 74,
       "limit": 10,
       "lastclaim": 0,
       "registered": false,
@@ -10021,10 +10021,10 @@
       "lastSuccess": 1635992271308
     },
     "enable.js": {
-      "total": 89,
-      "success": 69,
-      "last": 1635992565152,
-      "lastSuccess": 1635992276726
+      "total": 90,
+      "success": 70,
+      "last": 1635996366696,
+      "lastSuccess": 1635996366696
     },
     "tebakgambar.js": {
       "total": 4,
@@ -10069,10 +10069,10 @@
       "lastSuccess": 0
     },
     "leaderboard.js": {
-      "total": 30,
-      "success": 30,
-      "last": 1635989202457,
-      "lastSuccess": 1635989202457
+      "total": 31,
+      "success": 31,
+      "last": 1635996345166,
+      "lastSuccess": 1635996345166
     },
     "botstat.js": {
       "total": 21,
@@ -10644,11 +10644,11 @@
       "antispam": false,
       "antitroli": false,
       "backup": true,
-      "backupDB": 1635989201424,
+      "backupDB": 1635996344067,
       "groupOnly": false,
       "jadibot": false,
       "nsfw": false,
-      "status": 1635992795810
+      "status": 1635996432661
     },
     "backup": true,
     "nsfw": false,
