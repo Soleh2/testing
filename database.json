@@ -18344,7 +18344,7 @@
     "6281336990737@s.whatsapp.net": {
       "anon": true,
       "anticall": true,
-      "antispam": false,
+      "antispam": true,
       "antitroli": false,
       "backup": true,
       "backupDB": 1636063912743,
