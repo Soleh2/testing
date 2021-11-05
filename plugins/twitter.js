@@ -16,5 +16,5 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['twitter'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^twitter$/i
-handler.limit = true
+handler.premium = true
 module.exports = handler
