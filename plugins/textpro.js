@@ -11,7 +11,7 @@ let handler = async (m, { conn, args: [effect], text: txt }) => {
   await conn.sendFile(m.chat, url, 'file.jpg', `*TEXTPRO*\n*Efek:* ${effect}`, m, 0, { thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['textpro'].map(v => v + ' <efek> <teks>|[teks2]')
-handler.tags = ['tools']
+handler.tags = ['nulis']
 handler.command = /^(textpro)$/i
 handler.limit = true
 
