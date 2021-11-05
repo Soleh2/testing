@@ -19,5 +19,6 @@ handler.help = ['ighighlight'].map(v => v + ' <username>')
 handler.tags = ['downloader']
 
 handler.command = /^(ighighlight?)$/i
+handler.premium = true
 
 module.exports = handler
