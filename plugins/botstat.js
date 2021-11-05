@@ -8,8 +8,8 @@ let handler = async (m, { conn }) => {
     let uptime = clockString(_uptime)
 
     m.reply(`
-┌─〔 Status 〕
-├ Aktif selama ${uptime}
+┌─〔 *Status* 〕
+├ Runtime ${uptime}
 ├ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
 ├ *${groups.length}* Grup
 ├ *${chats.length - groups.length}* Chat Pribadi
@@ -20,7 +20,7 @@ let handler = async (m, { conn }) => {
 ├ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 └────
 
-┌─〔 Pengaturan 〕
+┌─〔 *Pengaturan* 〕
 ├ ${anon ? '✅' : '❌'} *Anon Chat*
 ├ ${anticall ? '✅' : '❌'} *Anti Call*
 ├ ${antispam ? '✅' : '❌'} *Anti Spam*
