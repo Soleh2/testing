@@ -29698,11 +29698,11 @@
     "6281336990737@s.whatsapp.net": {
       "anon": true,
       "anticall": true,
-      "antispam": true,
+      "antispam": false,
       "antitroli": false,
       "backup": true,
       "backupDB": 1636294460874,
-      "groupOnly": true,
+      "groupOnly": false,
       "jadibot": false,
       "nsfw": false,
       "status": 1636298061232
