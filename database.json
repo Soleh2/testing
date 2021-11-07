@@ -27047,7 +27047,7 @@
       "antitroli": false,
       "backup": true,
       "backupDB": 1636258898824,
-      "groupOnly": false,
+      "groupOnly": true,
       "jadibot": false,
       "nsfw": false,
       "status": 1636260386764
