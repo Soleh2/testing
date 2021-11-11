@@ -36,7 +36,7 @@ node .
 
 ---------
 
-## UNTUK PENGGUNA HEROKU
+## UNTUK PENGGUNA HEROKUk
 
 ### Instal Buildpack
 * heroku/nodejs
