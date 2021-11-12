@@ -19,7 +19,7 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'anime', 'quotes', 'admin', 'grup', 'premium', 'internet', 'videomaker', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'alkitab', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -27,13 +27,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
-    'anime': 'Anime',
     'quotes': 'Quotes',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
     'premium': 'Premium',
     'internet': 'Internet',
-    'videomaker': 'Video Maker',
     'anonymous': 'Anonymous Chat',
     'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
@@ -43,7 +41,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'alkitab': 'Al Kitab',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
@@ -61,9 +58,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
   }
-  if (teks == 'anime') tags = {
-    'anime': 'Anime'
-  }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
@@ -78,9 +72,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
-  }
-  if (teks == 'videomaker') tags = {
-    'videomaker': 'Video Maker'
   }
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
@@ -106,9 +97,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'quran') tags = {
     'quran': 'Al Qur\'an'
-  }
-  if (teks == 'alkitab') tags = {
-    'alkitab': 'Al Kitab'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
