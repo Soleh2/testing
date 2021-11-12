@@ -8,10 +8,6 @@ const defaultMenu = {
   before: `
 Hai, %name!
 
-Tanggal: *%week %weton, %date*
-Tanggal Islam: *%dateIslamic*
-Waktu: *%time*
-
 %readmore`.trimStart(),
   header: '┌─「 *%category* 」',
   body: '├☉ %cmd %islimit %isPremium',
@@ -36,9 +32,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
     'premium': 'Premium',
+    'anime': 'Anime'
+    'video' 'Video Maker'
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'nulis': 'Nulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -46,6 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
+    'alkitab': 'Al Kitab'
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
@@ -75,6 +74,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'premium') tags = {
     'premium': 'Premium'
   }
+  if (teks == 'anime') tags = {
+    'premium': 'Anime'
+  }
+  if (teks == 'video') tags = {
+    'premium': 'Video Maker'
+  }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
   }
@@ -102,6 +107,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'quran') tags = {
     'quran': 'Al Qur\'an'
+  }
+  if (teks == 'alkitab') tags = {
+    'quran': 'Al Kitab'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
@@ -366,7 +374,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Follow My IG\ninstagram.com/naaaanndo', 'OWNER', `${_p}owner`, 'DONASI', `${_p}donasi`, m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Follow My IG\ninstagram.com/nando.xyz', 'OWNER', `${_p}owner`, 'DONASI', `${_p}donasi`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
