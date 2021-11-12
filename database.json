@@ -77,7 +77,7 @@
       "pasangan": ""
     },
     "18554394933@s.whatsapp.net": {
-      "exp":9999999999999999999999,
+      "exp": 12345678,
       "limit": 22,
       "lastclaim": 1636512386248,
       "registered": true,
@@ -135,8 +135,8 @@
       "pasangan": ""
     },
     "6281252848955@s.whatsapp.net": {
-      "exp": 999999999999999999999999999,
-      "limit": 1652,
+      "exp": 9999999999,
+      "limit": 999999,
       "lastclaim": 1636677812329,
       "registered": true,
       "name": "Nando",
