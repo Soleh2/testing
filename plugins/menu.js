@@ -6,10 +6,9 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-Hai, %name!
-
+Hai, %name! Have a nice day
 %readmore`.trimStart(),
-  header: '┌─「 *%category* 」',
+  header: '┌─「 %category 」',
   body: '├☉ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `
@@ -20,7 +19,7 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'anime', 'quotes', 'admin', 'grup', 'premium', 'internet', 'videomaker', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'alkitab', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Utama',
@@ -28,15 +27,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
+    'anime': 'Anime',
     'quotes': 'Quotes',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
     'premium': 'Premium',
-    'anime': 'Anime',
-    'video' 'Video Maker',
     'internet': 'Internet',
+    'videomaker': 'Video Maker',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'Nulis & Logo',
+    'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -62,6 +61,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
   }
+  if (teks == 'anime') tags = {
+    'anime': 'Anime'
+  }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
@@ -74,20 +76,17 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'premium') tags = {
     'premium': 'Premium'
   }
-  if (teks == 'anime') tags = {
-    'anime': 'Anime'
-  }
-  if (teks == 'video') tags = {
-    'video': 'Video Maker'
-  }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
+  }
+  if (teks == 'videomaker') tags = {
+    'videomaker': 'Video Maker'
   }
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'Nulis & Logo'
+    'nulis': 'MagerNulis & Logo'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
@@ -109,7 +108,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': 'Al Qur\'an'
   }
   if (teks == 'alkitab') tags = {
-    'quran': 'Al Kitab'
+    'alkitab': 'Al Kitab'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
@@ -185,15 +184,22 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `${ucapan()}, ${name}`.trim(),
-          "description": "Berikut daftar menunya",
+          "title": `
+Hai ${name} ${ucapan()}
+
+Tanggal: ${date}
+Hari: ${week}
+Waktu: ${time}
+
+Berikut ini daftar menunya. ,
+          "description": "© Moon\nRuntime: ${uptime}",
           "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `📄 Semua Perintah`,
+                  "title": `📜 Semua Perintah`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
@@ -202,12 +208,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": `${_p}? game`
 
                 }, {
-                  "title": "🍑 XP",
+                  "title": "💰 XP",
                   "description": "",
                   "rowId": `${_p}? xp`
 
                 }, {
-                  "title": "🕳️ Stiker",
+                  "title": "🖼️ Stiker",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
@@ -215,11 +221,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? kerangajaib`
                 }, {
-                  "title": "💌 Quotes",
+                  "title": "🐧 Anime",
+                  "description": "",
+                  "rowId": `${_p}? anime`
+                }, {
+                  "title": "📝 Quotes",
                   "description": "",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "👥 Admin",
+                  "title": "👤 Admin",
                   "description": "",
                   "rowId": `${_p}? admin`
                 }, {
@@ -227,7 +237,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? grup`
                 }, {
-                  "title": "😎 Premium",
+                  "title": "💶 Premium",
                   "description": "",
                   "rowId": `${_p}? premium`
                 }, {
@@ -235,7 +245,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "👽 Anonymous",
+                  "title": "🎥 Video Maker",
+                  "description": "",
+                  "rowId": `${_p}? videomaker`
+                }, {
+                  "title": "👫 Anonymous",
                   "description": "",
                   "rowId": `${_p}? anonymous`
                 }, {
@@ -243,7 +257,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? nulis`
                 }, {
-                  "title": "📂 Downloader",
+                  "title": "⬇️ Downloader",
                   "description": "",
                   "rowId": `${_p}? downloader`
                 }, {
@@ -259,13 +273,17 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? database`
                 }, {
-                  "title": "📝 Vote & Absen",
+                  "title": "👍 Vote & Absen",
                   "description": "",
                   "rowId": `${_p}? vote`
                 }, {
-                  "title": "🤲 Al-Qur\'an",
+                  "title": "💓 Al-Qur\'an",
                   "description": "",
                   "rowId": `${_p}? quran`
+                }, {
+                  "title": "🤎 Al Kitab",
+                  "description": "",
+                  "rowId": `${_p}? alkitab`
                 }, {
                   "title": "🗣️ Pengubah Suara",
                   "description": "",
@@ -275,11 +293,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? jadibot`
                 }, {
-                  "title": "⁉️ Info",
+                  "title": "ℹ️ Info",
                   "description": "",
                   "rowId": `${_p}? info`
                 }, {
-                  "title": "🎃 Tanpa Kategori",
+                  "title": "💩 Tanpa Kategori",
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
@@ -374,7 +392,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Follow My IG\ninstagram.com/nando.xyz', 'OWNER', `${_p}owner`, 'DONASI', `${_p}donasi`, m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), '© Moon', 'OWNER', `${_p}owner`, 'DONASI', `${_p}donasi`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -413,7 +431,7 @@ function ucapan() {
     res = "Selamat pagi 🌄"
   }
   if (time > 10) {
-    res = "Selamat siang 🌞"
+    res = "Selamat siang ☀️"
   }
   if (time >= 15) {
     res = "Selamat sore 🌇"
