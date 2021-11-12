@@ -16,10 +16,10 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 ketik *${usedPrefix}menu* untuk melihat daftar perintah`.trim(), '© Moon', 'Menu', `${usedPrefix}?`, { contextInfo: { mentionedJid: [m.sender] } })
 }
 handler.help = ['join <chat.whatsapp.com>']
-handler.tags = ['']
+handler.tags = ['owner']
 
 handler.command = /^join$/i
 
-handler.premium = true
+handler.owner = true
 
 module.exports = handler
