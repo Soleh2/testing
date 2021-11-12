@@ -32,8 +32,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
     'premium': 'Premium',
-    'anime': 'Anime'
-    'video' 'Video Maker'
+    'anime': 'Anime',
+    'video' 'Video Maker',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
     'nulis': 'Nulis & Logo',
@@ -44,7 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'alkitab': 'Al Kitab'
+    'alkitab': 'Al Kitab',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
@@ -75,10 +75,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'premium': 'Premium'
   }
   if (teks == 'anime') tags = {
-    'premium': 'Anime'
+    'anime': 'Anime'
   }
   if (teks == 'video') tags = {
-    'premium': 'Video Maker'
+    'video': 'Video Maker'
   }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
@@ -87,7 +87,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'anonymous': 'Anonymous Chat'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+    'nulis': 'Nulis & Logo'
   }
   if (teks == 'downloader') tags = {
     'downloader': 'Downloader'
