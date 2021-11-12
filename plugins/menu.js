@@ -172,8 +172,16 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `${ucapan()}, ${name}`.trim(),
-          "description": "© stikerin",
+          "title": `
+${ucapan()}, ${name}
+
+Tanggal: ${date}
+Hari: ${week}
+Waktu: ${time}
+
+Berikut daftar menunya
+`.trim(),
+          "description": "® Moon",
           "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
