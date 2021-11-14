@@ -35,11 +35,11 @@ global.APIKeys = { // APIKey nya disini
 
 // Sticker WM
 global.packname = 'Made With'
-global.author = 'Moon'
+global.author = 'Moon Bot'
 
-global.wait = '_*Tunggu sedang di proses...*_'
-global.eror = '_*Server Error*_'
-global.fla = 'https://i.postimg.cc/2jBCvPg6/7a802449a030480ea82dd53705e71882.jpg'
+global.wait = 'Tunggu sedang di proses...'
+global.eror = 'Maaf server sedang error'
+global.fla = 'https://i.ibb.co/PtpCPWf/gura.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
