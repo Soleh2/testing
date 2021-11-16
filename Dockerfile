@@ -16,7 +16,7 @@ RUN npm install
 RUN npm install -g npm@latest
 RUN npm install @adiwajshing/baileys
 
-COPY . .
+COPY . ....
 
 EXPOSE 5000
 
