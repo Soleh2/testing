@@ -39,7 +39,7 @@ global.author = 'Moon Bot'
 
 global.wait = 'Tunggu sedang di proses...'
 global.eror = 'Maaf server sedang error'
-global.fla = 'https://i.ibb.co/PtpCPWf/gura.jpg'
+global.fla = 'https://telegra.ph/file/8f40e6e8f6ced8baf1cb5.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
