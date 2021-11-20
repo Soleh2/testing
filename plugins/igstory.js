@@ -1,24 +1,33 @@
-const { igstory } = require('../lib/scrape')
-
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-
-  if (!args[0]) throw `uhm.. username nya mana?\n\ncontoh:\n\n${usedPrefix + command} stikerinbot`
-  if (args[0].startsWith('http') || args[0].startsWith('@')) throw `username salah`
-
-  igstory(args[0]).then(async res => {
-    let igs = JSON.stringify(res)
-    let json = JSON.parse(igs)
-    await m.reply(global.wait)
-    for (let { downloadUrl, type } of json)
-      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© Moon', m)
-
-  })
-
+let handler = async (m, { usedPrefix, command, conn, args }) => {
+  if (!args[0]) throw `Gunakan format: ${usedPrefix}${command} instagram`
+  let res = await igstory(args[0])
+  if (!res.length) throw 'User no have story!'
+  for (let { url, type } of res)
+    conn.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), `
+@${args[0]}
+`.trim(), m)
 }
 handler.help = ['igstory'].map(v => v + ' <username>')
 handler.tags = ['downloader']
-handler.command = /^(igs(tory)?)$/i
 
-handler.premium = true
+handler.command = /^(igs(tory)?)$/i
+handler.limit = true
 
 module.exports = handler
+
+const axios = require('axios')
+const cheerio = require('cheerio')
+const fetch = require('node-fetch')
+async function igstory(username) {
+  username = username.replace(/https:\/\/instagram.com\//g, '')
+  let { data } = await axios.get(`https://www.instadownloader.org/data.php?username=${username}&t=${new Date * 1}`)
+  const $ = cheerio.load(data)
+  let results = []
+  $('body > center').each(function (i, el) {
+    results.push({
+      url: $(el).find('a.download-btn').attr('href'),
+      type: $(el).find('video').html() ? 'video' : 'image'
+    })
+  })
+  return results
+}
