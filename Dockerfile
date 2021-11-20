@@ -17,7 +17,7 @@ RUN npm install -g npm@latest
 RUN npm ins.tall @adiwajshing/b..aileys
 
 COPY ....
-
+..
 EXPOSE 5000
 
 CMD ["npm", "start"]`
