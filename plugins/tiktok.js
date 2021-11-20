@@ -5,15 +5,17 @@ let handler = async (m, { conn, args, command, usedPrefix }) => {
   let url = video.no_watermark || video.with_watermark || video.no_watermark_raw || music
   if (!url) throw 'Gagal mengambil url download'
   await conn.sendFile(m.chat, url, 'tiktok.mp4', `
-- *By:* ${author.nickname} (${author.unique_id})
-- *Desc:*
-${description}
+*By:* ${author.nickname} (${author.unique_id})
+*Desc:* ${description}
+
+© Moon
 `.trim(), m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
 handler.command = /^(tik(tok)?(dl)?)$/i
+handler.limit = true
 
 module.exports = handler
 
