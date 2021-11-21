@@ -16,7 +16,8 @@ RUN npm install
 RUN npm install -g npm@latest
 RUN npm ins.tall @adiwajshing/b..aileys
 
-COPY ....
+COPY ..
+
 ..
 EXPOSE 5000
 
