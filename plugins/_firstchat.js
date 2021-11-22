@@ -1,5 +1,4 @@
 let moment = require('moment-timezone')
-let fetch = require ('node-fetch')
 let handler = m => m
 
 handler.all = async function (m) {
@@ -9,13 +8,12 @@ handler.all = async function (m) {
     if (m.isGroup) return
     if (db.data.settings.groupOnly) return
     let user = global.db.data.users[m.sender]
-    let name = conn.user.name
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
-    await conn.send3ButtonLoc(m.chat, await(await fetch(image)).buffer(), `
+    await this.sendButton(m.chat, `
 Hai, ${ucapan()}
 
-${user.banned ? 'kamu dibanned' : `Saya adalah ${name}, salah satu Bot Whatsapp. harap tidak spam/telpon nomor ini. Ada yang bisa saya bantu?`}
-`.trim(), watermark, user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? ',owner' : ',?', 'Panduan penggunaan', '.panduan', 'Rules', '.rules', m, { contextInfo:{externalAdReply: {title: 'Moon', sourceUrl: sumberurl, body: deskripsiurl, thumbnail: thumb}}}, m)
+${user.banned ? 'kamu dibanned' : 'Ada yang bisa saya banting?'}
+`.trim(), '© Moon', user.banned ? 'Pemilik bot' : 'Menu', user.banned ? ',owner' : ',?', m)
     user.pc = new Date * 1
 }
 
