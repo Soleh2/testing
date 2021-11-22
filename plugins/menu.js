@@ -144,6 +144,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    let moon = `Berikut adalah list menu Moon Bot.\n\nJoin grup official Moon Bot untuk mendapatkan akses lebih\nGrup 1: https://chat.whatsapp.com/IW3mjcIZxY7CVGXaSOYkdv\n\nGrup 2: https://chat.whatsapp.com/CTgARPa75SL9MbBMuOmZxH\n\n© Moon'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -189,7 +190,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "title": `
 ${ucapan()} ${name}, Have a nice day
 `.trim(),
-          "description": "® Moon",
+          "description": moon,
           "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
