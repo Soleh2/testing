@@ -42,6 +42,7 @@ global.eror = 'Maaf server sedang error'
 global.fla = 'https://i.ibb.co/z5FZt5j/IMG-20211117-WA0094.jpg'
 global.watermark = '© Moon'
 global.image = 'https://i.ibb.co/w77rpkb/Text-Pro-me-1619bc1fdf3199.jpg'
+global.thumbfoto = 'https://i.ibb.co/DfPb7FN/Text-Pro-me-1619bc9840f5f1.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
