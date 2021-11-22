@@ -188,6 +188,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         "listMessage": {
           "title": `
 ${ucapan()} ${name}, Have a nice day
+Berikut ini adalah list menu moon bot
+
+Join grup official bot untuk mendapatkan akses lebih
+
+Grup 1:
+https://chat.whatsapp.com/IW3mjcIZxY7CVGXaSOYkdv
+
+Grup 2:
+https://chat.whatsapp.com/CTgARPa75SL9MbBMuOmZxH
 `.trim(),
           "description": "® Moon",
           "buttonText": "Klik Disini",
