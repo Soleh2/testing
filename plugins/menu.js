@@ -189,7 +189,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "title": `
 ${ucapan()} ${name}, Have a nice day
 `.trim(),
-          "description": "Berikut adalah list menu Moon Bot.\n\nJoin grup official Moon Bot untuk mendapatkan akses lebih\nGrup 1: https://chat.whatsapp.com/IW3mjcIZxY7CVGXaSOYkdv\n\nGrup 2: https://chat.whatsapp.com/CTgARPa75SL9MbBMuOmZxH\n\n© Moon"
+          "description": "® Moon",
           "buttonText": "Klik Disini",
           "listType": "SINGLE_SELECT",
           "sections": [
