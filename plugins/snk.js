@@ -31,7 +31,7 @@ Kebijakan Privasi, Syarat Ketentuan dan Peraturan Moon-Bot
 
 Peraturan: 1 Oktober 2021
 `.trim()
-    conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer(), teks, © Moon, 'Menu', '.menu', 'Owner', '.owner', m)
+    conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer(), teks, watermark, 'Menu', '.menu', 'Owner', '.owner', m)
 }
 handler.help = ['peraturan']
 handler.command = /^(snk|syarat|peraturan|rules)$/i
