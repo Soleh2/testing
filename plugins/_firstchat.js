@@ -12,7 +12,7 @@ handler.all = async function (m) {
     await this.sendButton(m.chat, `
 Hai, ${ucapan()}
 
-${user.banned ? 'kamu dibanned' : 'Ada yang bisa saya banting?'}
+${user.banned ? 'kamu dibanned' : 'Ada yang bisa saya bantu?\nSaya adalah Moon-Bot, ketik #menu untuk memulai'}
 `.trim(), '© Moon', user.banned ? 'Pemilik bot' : 'Menu', user.banned ? ',owner' : ',?', m)
     user.pc = new Date * 1
 }
