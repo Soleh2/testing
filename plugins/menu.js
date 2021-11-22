@@ -45,6 +45,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
+    'video': 'Video Maker',
+    'wibu': 'Wibu',
+    'nsfw': 'Nswf',
   }
   if (teks == 'game') tags = {
     'game': 'Game'
@@ -115,6 +118,17 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'host': 'Host',
     'advanced': 'Advanced'
   }
+  if (teks == 'wibu') tags = {
+    'wibu': 'Wibu'
+  }
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'Nsfw'
+  }
+  if (teks == 'video') tags = {
+    'video': 'Video Maker'
+  }
+
+
 
 
 
@@ -173,13 +187,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `
-${ucapan()}, ${name}
+${ucapan()} ${name}, Have a nice day
 
-Tanggal: ${date}
-Hari: ${week}
-Waktu: ${time}
-
-Berikut daftar menunya
+${date}, ${week}
 `.trim(),
           "description": "® Moon",
           "buttonText": "Klik Disini",
@@ -187,6 +197,15 @@ Berikut daftar menunya
           "sections": [
             {
               "rows": [
+                {
+                  "title": "Rules",
+                  "description": "Rules menggunakan Bot",
+                  "rowId": ".snk"
+                }, {
+                  "title": "Sewa",
+                  "description": "Price list sewa bot",
+                  "rowId": ".sewa"
+                }, 
                 {
                   "title": `Semua Perintah`,
                   "description": "",
@@ -262,6 +281,15 @@ Berikut daftar menunya
                   "description": "",
                   "rowId": `${_p}? quran`
                 }, {
+                  "title": "Wibu",
+                  "description": "",
+                  "rowId": ".? wibu"
+                }, {
+                  "title": "Nsfw",
+                  "description": "",
+                  "rowId": ".? nsfw"
+                },
+                {
                   "title": "Pengubah Suara",
                   "description": "",
                   "rowId": `${_p}? audio`
